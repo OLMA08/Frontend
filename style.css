@@ -1,0 +1,118 @@
+:root {
+  --very-darkblue: hsl(233, 47%, 7%); /*(main background)*/
+  --darkdesaturated-blue: hsl(244, 38%, 16%); /*(card background)*/
+  --soft-violet: hsl(277, 64%, 61%); /* (accent)*/
+
+  --slightlytransparent-white: hsla(0, 0%, 100%, 0.75); /*(main paragraph)*/
+  --slightly-transparentwhite: hsla(0, 0%, 100%, 0.6); /*(stat headings)*/
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 15px;
+  font-family: sans-serif;
+}
+.stats {
+  font-family: "Courier New", Courier, monospace;
+}
+.container {
+  width: 100vw;
+  height: 100vh;
+  background: var(--very-darkblue);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-items: center;
+  justify-content: center;
+  
+}
+.card {
+  width: 70vw;
+  background: var(--darkdesaturated-blue);
+  border-radius: 7px;
+  display: flex;
+}
+.card .desc {
+  width: 50%;
+  padding: 4rem;
+}
+.card .desc h1 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+.card .desc h1 span {
+  color: var(--soft-violet);
+  font-size: 2rem;
+  cursor: pointer;
+}
+.card .desc h1 span:hover {
+  color: var(--slightly-transparentwhite);
+}
+.card .desc p {
+  color: var(--slightlytransparent-white);
+  margin-top: 1.5rem 0 3rem 0;
+  margin-bottom: 10px;
+}
+.card .stats {
+  display: flex;
+  justify-content: space-between;
+}
+.card .stats .number {
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+.card .stats .name {
+  text-transform: uppercase;
+  color: var(--slightly-transparentwhite);
+  font-size: 10px;
+  letter-spacing: 1.5px;
+}
+.card .img {
+  width: 50%;
+  border-radius: 0 7px 7px 0;
+  width: 50%;
+  background: linear-gradient(
+      0deg,
+      hsl(277, 64%, 61%, 0.5) 0%,
+      hsl(277, 64%, 61%, 0.5) 100%
+    ),
+    url(./images/image-header-desktop.jpg) center no-repeat;
+  background-size: cover;
+}
+
+/*Responsive -Mobile-Design-*/
+@media (max-width: 375px) {
+  .card {
+    flex-direction: column-reverse;
+    justify-content: space-between;
+    width: 90vw;
+    height: 90vh;
+  }
+  .card .desc {
+    width: auto;
+    height: 70%;
+    text-align: center;
+    padding: 1.5rem;
+  }
+  .card .stats {
+    flex-direction: column;
+  }
+  .card .stats .companies,
+  .card .stats .templates {
+    margin-bottom: 2rem;
+  }
+  .card .card-img {
+    border-radius: 7px 7px 0 0;
+    width: 100%;
+    height: 30%;
+    background: linear-gradient(
+        0deg,
+        hsla(277, 64%, 61%, 0.5) 0%,
+        hsla(277, 64%, 61%, 0.5) 100%
+      ),
+      url(images/image-header-mobile.jpg) center no-repeat;
+    background-size: cover;
+  }
+}
